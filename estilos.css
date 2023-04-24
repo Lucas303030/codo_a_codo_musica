@@ -1,0 +1,165 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: whitesmoke;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10px;
+  background-color: transparent;
+  position: fixed;
+  width: 100%;
+}
+
+.logo{
+  padding: 10px 25px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  color: #fff;
+}
+
+.navbar ul{
+  display: flex;
+}
+
+.navbar ul li{
+  list-style: none;
+}
+
+.navbar ul li a{
+  text-decoration: none;
+  margin: 0 5px;
+  padding: 8px 25px;
+  background-color: transparent;
+  border-radius: 25px;
+  color: white;
+  transition: background-color .7s;
+}
+
+.navbar ul li a:hover{
+  background-color: #000;
+  color: #fff;
+  transition: background-color .7s;
+}
+
+.navbar > span{
+  display: none;
+}
+
+.hero-container{
+  padding-top: 75px;
+  background-image: url(./images/hero.jpg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
+}
+
+.category{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  height: 5vh;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.category a{
+  margin: auto;
+  color: black;
+  text-decoration: none;
+}
+
+footer{
+  height: 25vh;
+  background-color: black;
+}
+
+footer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-container p{
+  color: white;
+  text-align: center;
+  padding-bottom: 3px;
+  border-bottom: 1px solid white;
+}
+
+.form{
+  background-color: transparent;
+  height: 100px;
+  width: 300px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form input{
+  display: block;
+  margin: auto;
+  width: 80%;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  height: 25px;
+  margin: 10px;
+  padding: 10px 15px;
+}
+
+.form button{
+  display: block;
+  margin: 0 auto;
+  width: 35%;
+  border-radius: 15px;
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+.iframe{
+  background-color: transparent;
+  height: 200px;
+  width: 200px;
+}
+
+.social{
+  background-color: transparent;
+  height: 100px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.social-container p{
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid white;
+  padding-bottom: 3px;
+}
+
+.social .social-icons{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  font-size: 20px;
+  margin-bottom: 25px;
+}

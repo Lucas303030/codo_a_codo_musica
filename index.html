@@ -15,15 +15,21 @@
 </head>
 <body>
 
+  <!-- Preloader -->
+
+  <div class="preloader">
+    <p>Cargando...</p>
+  </div>
+
 <!-- Navbar -->
 
   <nav class="navbar">
     <div class="logo">Musica y Legado</div>
     <ul>
-      <li class="menu-item"><a href="#">Inicio</a></li>
+      <li class="menu-item"><a href="#Inicio">Inicio</a></li>
       <li class="menu-item"><a href="#">Link_1</a></li>
       <li class="menu-item"><a href="#">Link_2</a></li>
-      <li class="menu-item"><a href="#">Link_3</a></li>
+      <li class="menu-item"><a href="#footer">Contacto</a></li>
     </ul>
     <span class="material-symbols-outlined">
       menu
@@ -32,7 +38,7 @@
 
 <!-- Main -->
 
-  <main>
+  <main id="Inicio">
 
     <section class="hero-container">
 
@@ -40,11 +46,11 @@
 
     <section class="category">
 
-      <a href="#">Estilo_1</a>
-      <a href="#">Estilo_2</a>
-      <a href="#">Estilo_3</a>
-      <a href="#">Estilo_4</a>
-      <a href="#">Estilo_5</a>
+      <a href="#estilo_1">Estilo_1</a>
+      <a href="#estilo_2">Estilo_2</a>
+      <a href="#estilo_3">Estilo_3</a>
+      <a href="#estilo_4">Estilo_4</a>
+      <a href="#estilo_5">Estilo_5</a>
 
     </section>
 
@@ -82,7 +88,7 @@
 
 <!-- Footer -->
 
-  <footer>
+  <footer id="footer">
 
     <div class="form-container">
       <p>Suscribite al Newsletter</p>
@@ -110,7 +116,6 @@
   </footer>
 
   <script src="main.js"></script>
-
   <script src="https://kit.fontawesome.com/7aebd0ab9a.js" crossorigin="anonymous"></script>
 </body>
 </html>

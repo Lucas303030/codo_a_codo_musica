@@ -12,17 +12,32 @@ let apiurl = "https://api.openopus.org/composer/list/epoch/"
 
 const EPOCH = ["Medieval", "Renaissance", "Baroque", "Classical", "Early Romantic", "Romantic", "Late Romantic", "20th Century", "Post-War", "21st Century"];
 
-EPOCH.forEach(function(x){
-    let periodo = apiurl.concat(x+".json")
-    let getPeriod = async (periodo) => {
-    let response = await fetch(periodo)
-    let result = await response.json()
-    let resultado = await result.request.item
-    document.getElementById("button-container").innerHTML+= 
-    `<a href="#${resultado}">${resultado}</a>`
-    }
-    getPeriod(periodo)
+urlArr = []
+
+EPOCH.forEach(periodo => {
+    let x = apiurl.concat(`${periodo}.json`)
+    urlArr.push(x)
 })
+
+async function getperiod(){
+    promises = urlArr.map( url => fetch(url))
+    const resultados = await Promise.all(promises)
+    console.log(resultados)
+    writeDom(resultados)
+}
+
+async function writeDom(resultados){
+    for (const i of resultados) {
+        datos = await i.json()
+        let x = datos.composers[0].epoch
+        document.getElementById("button-container").innerHTML +=
+        `<a href=#${x}>${x}</a>`
+    }
+}
+
+getperiod()
+
+// Agrega cartas al DOM
 
 const links = [
 "https://api.openopus.org/composer/list/epoch/Medieval.json",
@@ -56,6 +71,7 @@ const getEpoch = async function(array,index, epoca ) {
     let getUrl = await fetch(array[index]);
     let response = (await getUrl).json()
     let datos = await response
+    // 2 autores por categoria
     let composers = (datos.composers.slice(0,2))
     let numArr = [
         "one",
@@ -73,17 +89,14 @@ const getEpoch = async function(array,index, epoca ) {
     num++
     for (let index = 0; index < 2; index++) {
         a.innerHTML += `
-        
         <div class="cartita">
-        <p class="nombre">Nombre: ${composers[index].complete_name}</p>
+        <p class="nombre">${composers[index].complete_name}</p>
         <p class="epoca">Epoca: ${composers[index].epoch}</p>
         <img src="${composers[index].portrait}" alt="">
+        <h6>Aca iria una obra del autor: </h6>
+        <h6>Aca iria una obra del autor: </h6>
         </div>
-
         `
-
-        console.log(`${composers[index].epoch}: ${composers[index].complete_name}, ${composers[index].portrait}`)
-        
     }
 }
 
@@ -91,3 +104,19 @@ for (let index = 0; index < links.length; index++) {
     getEpoch(links, index, epochArr );    
 }
 
+// Intersection Observer
+
+const x = document.querySelector(".hero-container")
+const observer = new IntersectionObserver(intersec)
+
+function intersec (entradas) {
+    entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+            document.getElementById("navbar").classList.remove("observed")
+        } else {
+            document.getElementById("navbar").classList.add("observed")
+        }
+    })
+}
+
+observer.observe(x)

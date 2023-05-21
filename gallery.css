@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #222;
+    margin: auto;
+}
+
+/* Grid Gallery */
+
+.composers{
+    height: auto;
+    margin: 35px auto;
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    grid-gap: 15px;
+    grid-template-columns: repeat(10, 1fr);
+    max-width: 1600px;
+}
+
+.composer-each{
+    position: relative;
+    transition: all 1.5s;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.composer-each img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 10px;
+}
+
+.composer-each-desc{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 10%;
+    overflow: hidden;
+}
+
+.composer-each-desc p{
+    margin: 2px;
+    font-size: 12px;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 1.4px;
+    transform: translateX(100%);
+    transition: all 1.5s;
+}
+
+.composer-each:hover .composer-each-desc p{
+    transform: translateX(0);
+    transition: all 1.5s;
+}
+
+.blur{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    backdrop-filter: none;
+    width: 100%;
+    height: 100%;
+    transition: backdrop-filter .5s;
+    pointer-events: none;
+}
+
+.overlay_popup{
+    backdrop-filter: blur(4px);
+    transition: backdrop-filter .5s;
+}
+
+.popup{
+    height: 0%;  
+    width: 0%;
+    position: fixed;  
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    right: 0;
+    display: block;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+}
+
+.ver{
+    display: flex;   
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 25%;
+    width: 35%;
+    background-color: white;
+    border-radius: 25px;
+    z-index: 10000;
+    transition: all .5s ease-in-out;
+    box-shadow: 2px 2px 15px -4px rgba(128,128,128,0.75);
+    -webkit-box-shadow: 2px 2px 15px -4px rgba(128,128,128,0.75);
+    -moz-box-shadow: 2px 2px 15px -4px rgba(128,128,128,0.75);
+    background-color: whitesmoke;
+}
+
+.popup_button{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 15px;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    width: 35%;
+    margin: auto;
+}
+
+.ver p{
+    margin: auto;
+    text-align: center;
+    color: black !important;
+}

@@ -33,7 +33,7 @@ html{
 
 .navbar{
   display: flex;
-  height: 65px;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
   padding: 15px 10px;
@@ -91,6 +91,9 @@ html{
   background-repeat: no-repeat;
   background-size: cover;
   height: 70vh;
+  display:flex;
+  justify-content: center;
+
 }
 
 .categorias{
@@ -144,49 +147,10 @@ footer{
 
 footer{
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.form-container p{
-  color: white;
-  text-align: center;
-  padding-bottom: 3px;
-  border-bottom: 1px solid white;
-}
-
-.form{
-  background-color: transparent;
-  height: 100px;
-  width: 300px;
-  color: white;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.form input{
-  display: block;
-  margin: auto;
-  width: 80%;
-  border-radius: 12px;
-  outline: none;
-  border: none;
-  height: 25px;
-  margin: 10px;
-  padding: 10px 15px;
-}
-
-.form button{
-  display: block;
-  margin: 0 auto;
-  width: 35%;
-  border-radius: 15px;
-  color: white;
-  background-color: black;
-  border: none;
-}
 
 .iframe{
   background-color: transparent;
@@ -226,3 +190,85 @@ footer{
   transition: opacity 3s;
 }
 
+#iframe{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px
+}
+
+.formulario{
+  height: 400px;
+  background-color: grey;
+  display:flex;
+  justify-content: center;
+  text-align:center;
+  align-items: center;
+
+}
+.contenedorForm{
+  display:flex;
+  text-align: center;
+  flex-direction: column;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.contenedorForm h1{
+  margin-bottom: 20px
+}
+
+
+
+form div{
+  display: flex;
+  flex-direction: column;
+}
+
+form span{
+  height: 20px;
+}
+
+form input {
+  border-radius: 7px;
+}
+
+iframe{
+  width: 500px;
+  height: 200px
+}
+
+
+
+@media (max-width: 479px) {
+  nav{
+    display:flex;
+    flex-direction: column;
+  }
+  nav ul{
+    margin-top: 10px
+  }
+  iframe{
+    width: 400px;
+    height: 150px
+  }
+
+}
+
+@media (max-width: 768px) {
+  nav{
+    display:flex;
+    flex-direction: column;
+  }
+  nav ul{
+    margin-top: 10px
+  }
+
+}
+@media (max-width: 1200px) {
+  .galeria{
+    display:flex;
+  }
+  .contenedorForm{
+    border: 0px
+  }
+}

@@ -89,9 +89,9 @@ body{
 }
 
 .popup{
-    height: 0%;  
+    height: 0%;
     width: 0%;
-    position: fixed;  
+    position: fixed;
     top: 0;
     bottom: 0;
     left: 0;
@@ -103,7 +103,7 @@ body{
 }
 
 .ver{
-    display: flex;   
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: fixed;
@@ -112,7 +112,7 @@ body{
     left: 0;
     right: 0;
     margin: auto;
-    height: 25%;
+    height: 60%;
     width: 35%;
     background-color: white;
     border-radius: 25px;
@@ -140,3 +140,34 @@ body{
     text-align: center;
     color: black !important;
 }
+#anyos{
+    display: none;
+}
+#soloComp{
+    display:none;
+}
+
+#mediaName{
+    display:none;
+}
+
+@media (max-width: 768px){
+    .ver {
+        height: 60%;
+        width: 70%;
+    }
+
+}
+
+
+@media (max-width: 1200px){
+    #comps, #anyos{
+        display: none
+    }
+    #mediaName{
+        display:contents
+    }
+}
+
+
+

@@ -1,7 +1,7 @@
 const url = "https://api.openopus.org/composer/list/pop.json"
 const composers = document.querySelector(".composers")
 console.log(composers)
-let lista = []
+
 
 fetch(url)
 .then(
@@ -11,17 +11,17 @@ fetch(url)
         const prueba = datos.composers
         prueba.forEach((element,index) => {
             if (index < 20) {
-            // console.log(element.portrait)            
+            // console.log(element.portrait)
             composers.innerHTML+=
             `
             <div class="composer-each" id="${element.id}">
             <img src="${element.portrait}">
             <div class="overlay"><div>
             <div class="composer-each-desc">
-            <p>${element.complete_name} - ${element.epoch}</p>
-            <p>${element.birth} - ${element.death}</p>
+            <p id="comps">${element.complete_name} - ${element.epoch}</p>
+            <p id="anyos">${element.birth} - ${element.death}</p>
             </div>
-            </div> 
+            </div>
             `
         }
         });
@@ -37,12 +37,11 @@ setTimeout(() => {
     modal.forEach((element,index) => {
         element.addEventListener('click', () => {
             const ident = element.getAttribute("id")
-            
             fetch(`https://api.openopus.org/work/list/composer/${ident}/genre/all.json`)
             .then(response => response.json())
             .then(datos => {
                 // console.log(datos.works[0].title)
-                popup.innerHTML = 
+                popup.innerHTML =
                 `
                 <p>${datos.works[1].title}</p>
                 <p>${datos.works[2].title}</p>

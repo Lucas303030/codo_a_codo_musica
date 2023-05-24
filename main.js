@@ -20,7 +20,7 @@ observer.observe(x)
 const preloader = document.querySelector(".preloader")
 
 window.addEventListener("load", function () {
-    preloader.classList.add("oculto") 
+    preloader.classList.add("oculto")
  })
 
 // JS API (Inserta categorias al DOM - OpenOpusAPI)

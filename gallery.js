@@ -41,9 +41,11 @@ setTimeout(() => {
             .then(response => response.json())
             .then(datos => {
                 // console.log(datos.works[0].title)
+                // console.log(datos.composer.complete_name)
                 popup.innerHTML =
                 
                 `
+                <h5>${datos.composer.complete_name}</h5>
                 <p>${datos.works[1].title}</p>
                 <p>${datos.works[2].title}</p>
                 <p>${datos.works[3].title}</p>

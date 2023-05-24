@@ -156,9 +156,7 @@ body{
         height: 60%;
         width: 70%;
     }
-
 }
-
 
 @media (max-width: 1200px){
     #comps, #anyos{
@@ -166,6 +164,9 @@ body{
     }
     #mediaName{
         display:contents
+    }
+    .composers{
+        grid-template-columns: repeat(5, 16%);
     }
 }
 

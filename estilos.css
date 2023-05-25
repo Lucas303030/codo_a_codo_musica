@@ -233,11 +233,9 @@ form input {
 }
 
 iframe{
-  width: 500px;
-  height: 200px
+  width: 50%;
+  height: 350px
 }
-
-
 
 @media (max-width: 479px) {
   nav{
@@ -251,7 +249,6 @@ iframe{
     width: 400px;
     height: 150px
   }
-
 }
 
 @media (max-width: 768px) {
